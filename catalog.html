@@ -20,14 +20,16 @@
                     <a href="#">Клиенты</a>
                 </li>
                 <li class="site-navigation-active">
-                    <a href="catalog.html">Магазин</a>
+                    <a>Магазин</a>
                 </li>
                 <li>
                     <a href="#">Контакты</a>
                 </li>
             </ul>
             <ul class="user-navigation">
-                <li class="basket-link">Корзина</li>
+                <li class="basket-link">
+                    <a href="#">Корзина</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -43,64 +45,95 @@
 
         <section class="sorting">
             <h2 class="visually-hidden">Сортировка товаров</h2>
-            <!-- Форма сортировки? -->
+            <p>Сортировать</p>
+            <ul class="sort-list">
+                <li class="sort-type">
+                    <a href="#">По цене</a>
+                </li>
+                <li class="sort-type">
+                    <a href="#">По типу</a>
+                </li>
+                <li class="sort-type">
+                    <a href="#">Но названию</a>
+                </li>
+            </ul>
+            <ul class="sort-direction">
+                <li class="sort-descending">
+                    <a href="#">По убыванию</a>
+                </li>
+                <li class="sort-ascending">
+                    <a href="#">По возрастанию</a>
+                </li>
+            </ul>
         </section>
 
         <section class="catalog">
             <h2 class="visually-hidden">Список готовых шаблонов</h2>
             <ul class="catalog-list">
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">Sedona</a>
-                    </h3>
-                    <p>Информационный сайт для туристов</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона «Sedona»">
-                    <a class="button" href="#">9900 руб.</a>
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">Sedona</a>
+                        </h3>
+                        <p>Информационный сайт для туристов</p>
+                        <a class="button" href="#">9900 руб.</a>
+                    </div>
                 </li>
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">Pink App</a>
-                    </h3>
-                    <p>Продуктовый лендинг приложения для iOS и Android</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона «Pink App»">
-                    <a class="button" href="#">9900 руб.</a>
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">Pink App</a>
+                        </h3>
+                        <p>Продуктовый лендинг приложения для iOS и Android</p>
+                        <a class="button" href="#">9900 руб.</a>
+                    </div>
                 </li>
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">Barbershop</a>
-                    </h3>
-                    <p>Сайт салона красоты. Для мужчин, да.</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона Barbershop">
-                    <a class="button" href="#">9900 руб.</a>
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">Barbershop</a>
+                        </h3>
+                        <p>Сайт салона красоты. Для мужчин, да.</p>
+                        <a class="button" href="#">9900 руб.</a>
+                    </div>
                 </li>
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">Mishka</a>
-                    </h3>
-                    <p>Интернет-магазин вязаных игрушек</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона «Mishka»">
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">Mishka</a>
+                        </h3>
+                        <p>Интернет-магазин вязаных игрушек</p>
+                    </div>
                     <a class="button" href="#">9900 руб.</a>
                 </li>
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">A Plus</a>
-                    </h3>
-                    <p>Лендинг курсов повышения квалификации</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона «A Plus»">
-                    <a class="button" href="#">9900 руб.</a>
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">A Plus</a>
+                        </h3>
+                        <p>Лендинг курсов повышения квалификации</p>
+                        <a class="button" href="#">9900 руб.</a>
+                    </div>
                 </li>
                 <li class="catalog-item">
-                    <h3>
-                        <a href="#">Кваст</a>
-                    </h3>
-                    <p>Промо-сайт производителя крафтового кваса</p>
                     <img src="http://placehold.it/100x200" alt="Фото шаблона «Кваст»">
-                    <a class="button" href="#">9900 руб.</a>
+                    <div class="item-description">
+                        <h3>
+                            <a href="#">Кваст</a>
+                        </h3>
+                        <p>Промо-сайт производителя крафтового кваса</p>
+                        <a class="button" href="#">9900 руб.</a>
+                    </div>
                 </li>
             </ul>
             <ul class="pagination-list">
                 <li class="pagination-item pagination-item-active">
-                    <a href="#">1</a>
+                    <a>1</a>
                 </li>
                 <li class="pagination-item">
                     <a href="#">2</a>
@@ -116,21 +149,33 @@
     </main>
 
     <footer class="main-footer">
-        <section class="footer-contacts">
-            <h2 class="visually-hidden">Контакты</h2>
-            <b>NЁRDS Design Studio</b>
-            <p>
-                191186, Санкт-Петербург,
-                <br> ул. Б. Конюшенная, д. 19/8
-                <br> тел. +7 (812) 275-75-75
-            </p>
-            <a class="button" href="#">Напишите нам</a>
+        <section class="footer-location">
+            <h2 class="visually-hidden">Расположение</h2>
+            <img src="http://placehold.it/600x150" alt="Расположение студии на карте ">
+            <section class="footer-contacts">
+                <h3 class="visually-hidden">Контакты</h3>
+                <b>NЁRDS Design Studio</b>
+                <p>
+                    191186, Санкт-Петербург,
+                    <br> ул. Б. Конюшенная, д. 19/8
+                    <br> тел. +7 (812) 275-75-75
+                </p>
+                <a class="button" href="#">Напишите нам</a>
+            </section>
         </section>
 
         <div class="footer-social">
-            <a class="social-button" href="#">Вконтакте</a>
-            <a class="social-button" href="#">Фейсбук</a>
-            <a class="social-button" href="#">Инстаграм</a>
+            <ul class="social-list">
+                <li class="social-item">
+                    <a href="#">Вконтакте</a>
+                </li>
+                <li class="social-item">
+                    <a href="#">Фейсбук</a>
+                </li>
+                <li class="social-item">
+                    <a href="#">Инстаграм</a>
+                </li>
+            </ul>
             <p>
                 <b>Давайте дружить, это выгодно!</b>
                 <br> Скидка 10% для друзей из социальных сетей

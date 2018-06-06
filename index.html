@@ -9,7 +9,7 @@
 <body>
     <header class="main-header">
         <nav class="main-havigation">
-            <a class="main-header-logo" href="index.html">
+            <a class="main-header-logo">
                 <img src="http://placehold.it/50x50" alt="Логотип студии «NЁRDS»">
             </a>
             <ul class="site-navigation">
@@ -27,7 +27,9 @@
                 </li>
             </ul>
             <ul class="user-navigation">
-                <li class="basket-link">Корзина</li>
+                <li class="basket-link">
+                    <a href="#">Корзина</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -80,33 +82,39 @@
 
         <section class="about">
             <h2 class="visually-hidden">О нас</h2>
-            <h3>Мы - маленькая, но гордая дизайн-студия из Краснодара</h3>
-            <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая
-                рук, как роботы.</p>
-            <b>Выполняем заказы на разработку:</b>
-            <ul class="products-list-small">
-                <li class="products-item-small">Веб-сайтов любой сложности</li>
-                <li class="products-item-small">Мобильных приложений для iOS и Android</li>
-                <li class="products-item-small">Слайдшоу и видео для корпоративных презентаций</li>
-            </ul>
-        </section>
 
-        <section class="accuracy">
-            <h2 class="visually-hidden">Любовь к точности</h2>
-            <img src="http://placehold.it/100x100" alt="Логотип студии «NЁRDS»">
-            <b>С 2004 года любим точность во всем:</b>
-            <ul class="accuracy-list">
-                <li class="accuracy-item">
-                    <span class="accuracy-percent">146%</span>
-                    <br> Уровень самоотдачи
-                </li>
-                <li class="accuracy-item">
-                    <span class="accuracy-percent">100%</span>
-                    <br> Соблюдение сроков</li>
-                <li class="accuracy-item">
-                    <span class="accuracy-percent">50%</span>
-                    <br> Минимальная предоплата</li>
-            </ul>
+            <section class="about-work">
+                <h3 class="visually-hidden">О нашей работе</h3>
+                <b>Мы - маленькая, но гордая дизайн-студия из Краснодара</b>
+                <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая
+                    рук, как роботы.</p>
+                <b>Выполняем заказы на разработку:</b>
+                <ul class="products-list-small">
+                    <li class="products-item-small">Веб-сайтов любой сложности</li>
+                    <li class="products-item-small">Мобильных приложений для iOS и Android</li>
+                    <li class="products-item-small">Слайдшоу и видео для корпоративных презентаций</li>
+                </ul>
+            </section>
+
+            <section class="accuracy">
+                <h3 class="visually-hidden">Любовь к точности</h3>
+                <img src="http://placehold.it/100x100" alt="Логотип студии «NЁRDS»">
+                <table class="accuracy-samples">
+                    <caption>
+                        <b>С 2004 года любим точность во всем:</b>
+                    </caption>
+                    <tr class="sample-percent">
+                        <td>146<sup>%</sup></td>
+                        <td>100<sup>%</sup></td>
+                        <td>50<sup>%</sup></td>
+                    </tr>
+                    <tr class="sample-text">
+                        <td>Уровень самоотдачи</td>
+                        <td>Соблюдение сроков</td>
+                        <td>Минимальная предоплата</td>
+                    </tr>
+                </table>
+            </section>
         </section>
 
         <section class="partners">
@@ -127,15 +135,19 @@
     </main>
 
     <footer class="main-footer">
-        <section class="footer-contacts">
-            <h2 class="visually-hidden">Контакты</h2>
-            <b>NЁRDS Design Studio</b>
-            <p>
-                191186, Санкт-Петербург,
-                <br> ул. Б. Конюшенная, д. 19/8
-                <br> тел. +7 (812) 275-75-75
-            </p>
-            <a class="button" href="#">Напишите нам</a>
+        <section class="footer-location">
+            <h2 class="visually-hidden">Расположение</h2>
+            <img src="http://placehold.it/600x150" alt="Расположение студии на карте ">
+            <section class="footer-contacts">
+                <h3 class="visually-hidden">Контакты</h3>
+                <b>NЁRDS Design Studio</b>
+                <p>
+                    191186, Санкт-Петербург,
+                    <br> ул. Б. Конюшенная, д. 19/8
+                    <br> тел. +7 (812) 275-75-75
+                </p>
+                <a class="button" href="#">Напишите нам</a>
+            </section>
         </section>
 
         <div class="footer-social">
