@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <ul class="user-navigation">
-                <li class="basket-link">
+                <li class="cart-link">
                     <a href="#">Корзина</a>
                 </li>
             </ul>
@@ -149,7 +149,7 @@
                     <br> ул. Б. Конюшенная, д. 19/8
                     <br> тел. +7 (812) 275-75-75
                 </p>
-                <a class="button" href="#">Напишите нам</a>
+                <a class="button" href="write-us.html">Напишите нам</a>
             </section>
         </section>
 
@@ -173,10 +173,26 @@
     </footer>
 
     <section class="modal modal-write-us">
-        <h2>Форма обратной связи</h2>
+        <h2 class="visually-hidden">Форма обратной связи</h2>
         <p>Напишите нам</p>
-        <!-- Форма обратной связи -->
-        <span class="modal-close">x</span>
+        <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="form-row">
+                <div class="half-width">
+                    <label for="user-name">Ваше имя:</label>
+                    <input type="text" name="name" id="user-name" placeholder="Имя Фамилия" required>
+                </div>
+                <div class="half-width">
+                    <label for="user-email">Ваш e-mail:</label>
+                    <input type="text" name="email" id="user-email" placeholder="email@example.com" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="user-text">Текст письма:</label>
+                <textarea name="text" id="user-text" placeholder="В свободной форме" required></textarea>
+            </div>
+            <button class="button" type="submit">Отправить</button>
+        </form>
+        <button class="modal-close" type="button">Закрыть</button>
     </section>
 </body>
 
