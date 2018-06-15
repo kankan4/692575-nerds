@@ -40,18 +40,23 @@
 
         <section class="filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
-            <form class="filter-form" action="https://echo.htmlacademy.ru" method="get" oninput="price_min_output.value=price_min.value; price_max_output.value=price_max.value">
+            <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
                 <fieldset>
                     <legend>Стоимость:</legend>
-                    <div class="price-range">
-                        <label for="filter-price-min">От</label>
-                        <input class=" visually-hidden filter-input-range" type="range" id="filter-price-min" min="0" max="23000" step="1" name="price_min" value="0">
-                        <output name="price_min_output">0</output>
+                    <div class="price-range-bar">
+                        <div class="price-range-scale"></div>
+                        <button class="price-range-min" type="button">Указать минимум</button>
+                        <button class="price-range-max" type="button">Указать максимум</button>
+                    </div>
+                    <div class="price-range-input">
+                        <label>От
+                            <input class="price-input-text" type="text" name="price-min" value="0">
+                        </label>
+                        <label>До
+                            <input class="price-input-text" type="text" name="price-max" value="15000">
+                        </label>
                     </div>
                     <div class="price-range">
-                        <label for="filter-price-max">До</label>
-                        <input class="visually-hidden filter-input-range" type="range" id="filter-price-max" min="0" max="23000" step="1" name="price_max" value="15000">
-                        <output name="price_max_output">15000</output>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -134,7 +139,7 @@
                             <a href="#">Sedona</a>
                         </h3>
                         <p>Информационный сайт для туристов</p>
-                        <a class="button" href="#">9900 руб.</a>
+                        <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
@@ -144,7 +149,7 @@
                             <a href="#">Pink App</a>
                         </h3>
                         <p>Продуктовый лендинг приложения для iOS и Android</p>
-                        <a class="button" href="#">9900 руб.</a>
+                        <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
@@ -154,7 +159,7 @@
                             <a href="#">Barbershop</a>
                         </h3>
                         <p>Сайт салона красоты. Для мужчин, да.</p>
-                        <a class="button" href="#">9900 руб.</a>
+                        <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
@@ -165,7 +170,7 @@
                         </h3>
                         <p>Интернет-магазин вязаных игрушек</p>
                     </div>
-                    <a class="button" href="#">9900 руб.</a>
+                    <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                 </li>
                 <li class="catalog-item">
                     <img src="img/catalog-img-aplus.jpg" width="360" height="576" alt="Фото шаблона «A Plus»">
@@ -174,7 +179,7 @@
                             <a href="#">A Plus</a>
                         </h3>
                         <p>Лендинг курсов повышения квалификации</p>
-                        <a class="button" href="#">9900 руб.</a>
+                        <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
@@ -184,7 +189,7 @@
                             <a href="#">Кваст</a>
                         </h3>
                         <p>Промо-сайт производителя крафтового кваса</p>
-                        <a class="button" href="#">9900 руб.</a>
+                        <a class="button" href="#" aria-label="Купить за 9900 руб.">9900 руб.</a>
                     </div>
                 </li>
             </ul>
