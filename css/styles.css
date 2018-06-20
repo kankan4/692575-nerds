@@ -392,6 +392,7 @@ a {
 }
 
 /* catalog */
+
 .catalog-list {
     list-style: none;
 }
@@ -403,6 +404,16 @@ a {
 .item-header a {
     color: #000000;
     text-transform: uppercase;
+    outline-style: none;
+}
+
+.item-header a:hover,
+.item-header a:focus {
+    color: #fb565a;
+}
+
+.item-header a:active {
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .item-description p {
