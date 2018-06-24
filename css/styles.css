@@ -33,14 +33,12 @@ a {
     outline-style: none;
 }
 
-.main-header-logo[href] img:hover,
-.main-header-logo[href] img:focus,
-.main-header-logo[href]:focus>img {
+.main-header-logo[href]:focus,
+.main-header-logo[href]:hover {
     opacity: 0.8;
 }
 
-.main-header-logo[href] img:active,
-.main-header-logo[href]:active>img {
+.main-header-logo[href]:active {
     opacity: 0.3;
 }
 
@@ -49,6 +47,7 @@ a {
     line-height: 30px;
     color: #000000;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .site-navigation,
@@ -72,6 +71,11 @@ a {
 .site-navigation a:active,
 .user-navigation a:active {
     color: rgba(0, 0, 0, 0.3);
+}
+
+.site-navigation .current,
+.user-navigation .current {
+    box-shadow: 0 7px #eeeeee, 0 9px #fb565a;
 }
 
 /* slider block*/
@@ -192,6 +196,15 @@ a {
 .button-gray:active {
     color: rgba(129, 129, 129, 0.3);
     background-color: #d5d5d5;
+}
+
+.button-gray.current,
+.button-gray.current:hover,
+.button-gray.current:focus,
+.button-gray.current:active {
+    color: #000000;
+    border: 3px solid #dbdbdb;
+    background-color: #ffffff;
 }
 
 /* accuracy block */
@@ -315,7 +328,7 @@ a {
 
 /* catalog page */
 
-.container h1 {
+.page-title {
     color: #000000;
     font-size: 55px;
     line-height: 55px;
@@ -430,13 +443,4 @@ a {
 
 .pagination-list {
     list-style: none;
-}
-
-.pagination-item-active a,
-.pagination-item-active a:hover,
-.pagination-item-active a:focus,
-.pagination-item-active a:active {
-    color: #000000;
-    border: 3px solid #dbdbdb;
-    background-color: #ffffff;
 }
