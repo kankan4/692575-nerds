@@ -1,11 +1,13 @@
 body {
     margin: 0;
     padding: 0;
+
+    color: #283136;
+
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
-    line-height: 24px;
     font-weight: 400;
-    color: #283136;
+    line-height: 24px;
 }
 
 a {
@@ -14,22 +16,32 @@ a {
 
 .visually-hidden {
     position: absolute;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
     width: 1px;
     height: 1px;
     margin: -1px;
-    border: none;
     padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+
+    border: none;
 }
 
 /* header block*/
 
 .main-header {
+    min-height: 115px;
+    padding-bottom: 10px;
+
     background-color: #eeeeee;
 }
 
 .main-header-logo {
+    width: 160px;
+    height: 65px;
+    margin-top: 50px;
+
     outline-style: none;
 }
 
@@ -43,20 +55,59 @@ a {
 }
 
 .main-navigation {
-    font-size: 16px;
-    line-height: 30px;
-    color: #000000;
-    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    width: 1160px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+
     text-transform: uppercase;
+
+    color: #000000;
+    /*Временно для показа сетки*/
+    outline: 1px solid skyblue;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
 }
 
 .site-navigation,
 .user-navigation {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+}
+
+.site-navigation {
+    justify-content: space-between;
+
+    width: 438px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid green;
+}
+
+.user-navigation {
+    justify-content: flex-end;
+
+    width: 160px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid green;
 }
 
 .site-navigation a,
 .user-navigation a {
+    position: relative;
+
     color: #000000;
     outline-style: none;
 }
@@ -73,72 +124,178 @@ a {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.site-navigation .current,
-.user-navigation .current {
-    box-shadow: 0 7px #eeeeee, 0 9px #fb565a;
+.site-navigation .current::after,
+.user-navigation .current::after {
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+
+    width: 100%;
+
+    content: "";
+
+    border-bottom: 2px solid #fb565a;
 }
 
 /* slider block*/
 
 .features {
+    margin-bottom: 80px;
+
     background-color: #eeeeee;
 }
 
 .features-list {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+
     list-style: none;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid red;
 }
 
 .features-list h3 {
+    margin: 0;
+    padding: 0;
+
     color: #000000;
+
     font-size: 55px;
-    line-height: 55px;
     font-weight: 500;
+    line-height: 55px;
 }
 
 /* products block */
 
+.products {
+    width: 1160px;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+
+    border-bottom: 2px solid #818181;
+    /*Временно для показа сетки*/
+    outline: 1px solid goldenrod;
+}
+
 .products-list-large {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
 }
 
 .products-list-large h3 {
-    font-size: 24px;
-    line-height: 30px;
-    color: #000000;
-    font-weight: 700;
     text-transform: uppercase;
+
+    color: #000000;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.products-item-large {
+    width: 300px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid skyblue;
+}
+
+.products-item-large:not(:last-child) {
+    margin-right: 100px;
 }
 
 /* about block */
 
+.about {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1160px;
+    margin-right: auto;
+    margin-bottom: 45px;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-bottom: 78px;
+    padding-left: 20px;
+
+    border-bottom: 2px solid #818181;
+    /*Временно для показа сетки*/
+    outline: 1px solid palevioletred;
+}
+
+.about-work {
+    width: 660px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid yellowgreen;
+}
+
+.accuracy {
+    width: 360px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid yellowgreen;
+}
+
 .slogan {
-    font-size: 45px;
-    line-height: 45px;
     color: #000000;
+
+    font-size: 45px;
     font-weight: 500;
+    line-height: 45px;
 }
 
 .products-header {
-    font-weight: 700;
     text-transform: uppercase;
+
+    font-weight: 700;
 }
 
 .products-list-small {
     list-style: none;
 }
 
+/* accuracy block */
+
+.accuracy-samples caption {
+    text-transform: uppercase;
+
+    color: #000000;
+
+    font-weight: 700;
+}
+
+.sample-percent {
+    font-weight: 700;
+}
+
+.sample-text {
+    line-height: 18px;
+}
+
 /* all buttons */
 
 .button {
-    font: inherit;
-    line-height: 18px;
-    font-weight: 500;
-    color: #ffffff;
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
+
+    color: #ffffff;
     border: 0;
     outline-style: none;
+
+    font: inherit;
+    font-weight: 500;
+    line-height: 18px;
 }
 
 .button-red {
@@ -207,30 +364,31 @@ a {
     background-color: #ffffff;
 }
 
-/* accuracy block */
-
-.accuracy-samples caption {
-    color: #000000;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.sample-percent {
-    font-weight: 700;
-}
-
-.sample-text {
-    line-height: 18px;
-}
-
 /* partners block */
 
 .partners {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1160px;
+    margin-right: auto;
+    margin-bottom: 80px;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-bottom: 45px;
+    padding-left: 20px;
+
     text-align: center;
+
+    border-bottom: 2px solid #818181;
+    /*Временно для показа сетки*/
+    outline: 1px solid greenyellow;
 }
 
 .partners img {
     opacity: 0.2;
+    /*Временно для показа сетки*/
+    outline: 1px solid red;
 }
 
 .partners img:hover,
@@ -244,66 +402,127 @@ a {
 
 /* footer block */
 
+.footer-location {
+    position: relative;
+
+    width: 1440px;
+    margin-right: auto;
+    margin-bottom: 70px;
+    margin-left: auto;
+}
+
 .footer-location img {
     background-color: #e9e5dc;
 }
 
+.footer-contacts {
+    position: absolute;
+    top: 54px;
+    left: 140px;
+
+    box-sizing: border-box;
+    width: 320px;
+    height: 310px;
+    padding: 47px 50px;
+
+    background-color: #ffffff;
+}
+
 .footer-contacts b {
-    font-size: 18px;
-    line-height: 30px;
-    color: #000000;
-    font-weight: 700;
     text-transform: uppercase;
+
+    color: #000000;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
 }
 
 .footer-contacts p {
-    line-height: 18px;
     color: #666666;
+
+    line-height: 18px;
 }
 
-.footer-social ul {
-    text-align: center;
+.footer-social {
+    display: flex;
+
+    width: 1160px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid forestgreen;
+}
+
+.social-list {
+    display: flex;
+
+    width: 260px;
+    margin: 0;
+    margin-right: 140px;
+    padding: 0;
+
     list-style: none;
+
+    text-align: center;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid pink;
 }
 
-.footer-social a {
+.social-list a {
     color: #000000;
 }
 
+.footer-social p {
+    width: 560px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid pink;
+}
+
 .footer-social b {
+    color: #000000;
+
     font-size: 36px;
-    line-height: 36px;
     font-weight: 700;
-    color: #000000
+    line-height: 36px;
 }
 
 .social-discount {
-    line-height: 22px;
     color: #444444;
+
+    line-height: 22px;
 }
 
 /* write us form */
 
 .form-header {
-    font-size: 45px;
-    line-height: 45px;
     color: #000000;
+
+    font-size: 45px;
     font-weight: 500;
+    line-height: 45px;
 }
 
 .write-us-form label {
-    line-height: 18px;
     color: #000000;
+
     font-weight: 700;
+    line-height: 18px;
 }
 
 .write-us-form input,
 .write-us-form textarea {
-    font: inherit;
-    line-height: 18px;
     color: rgba(68, 68, 68, 0.5);
     border: 2px solid #d7dcde;
     outline-style: none;
+
+    font: inherit;
+    line-height: 18px;
 }
 
 .write-us-form input:hover,
@@ -328,21 +547,66 @@ a {
 
 /* catalog page */
 
-.page-title {
-    color: #000000;
-    font-size: 55px;
-    line-height: 55px;
-    font-weight: 500;
+.page-title-wrapper {
     background-color: #eeeeee;
+}
+
+.page-title {
+    width: 1160px;
+    margin: 0 auto 55px auto;
+    padding: 70px 20px 100px 20px;
+
+    text-align: center;
+
+    color: #000000;
+
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+.catalog-columns {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1160px;
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid pink;
+}
+
+.main-column-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 760px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid gold;
 }
 
 /* filters block */
 
+.filters {
+    width: 260px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid skyblue;
+}
+
 .filter-form legend {
-    font-size: 18px;
-    line-height: 30px;
+    text-transform: uppercase;
+
     color: #000000;
-    font-weight: bold;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
 }
 
 .filter-form fieldset {
@@ -350,41 +614,72 @@ a {
 }
 
 .price-range-input label {
-    line-height: 22px;
     text-transform: uppercase;
+
+    line-height: 22px;
 }
 
 .price-range-input input {
     text-align: center;
-    background-color: #eeeeee;
+
     border: none;
     outline-style: none;
+    background-color: #eeeeee;
 }
 
 .filter-list {
     list-style: none;
+
     line-height: 20px;
 }
 
-.filter-input-radio:checked+label,
-.filter-input-checkbox:checked+label {
+.filter-input-radio:checked + label,
+.filter-input-checkbox:checked + label {
     color: #000000;
 }
 
-.filter-input-radio:disabled+label,
-.filter-input-checkbox:disabled+label {
+.filter-input-radio:disabled + label,
+.filter-input-checkbox:disabled + label {
     color: rgba(40, 49, 54, 0.3);
 }
 
 /* sorting block */
 
-.sort-header {
-    line-height: 18px;
-    color: #000000;
+.sorting {
+    display: flex;
+
+    margin-bottom: 50px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid skyblue;
 }
 
-.sorting ul {
+.sort-header {
+    margin-right: 265px;
+
+    text-transform: uppercase;
+
+    color: #000000;
+    /*Временно для показа сетки*/
+    outline: 1px solid green;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.sort-list,
+.sort-direction {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid green;
+
     font-size: 14px;
     line-height: 18px;
 }
@@ -407,7 +702,37 @@ a {
 /* catalog */
 
 .catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 0;
+    margin-bottom: 27px;
+    padding: 0;
+
     list-style: none;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid skyblue;
+}
+
+.catalog-item {
+    box-sizing: border-box;
+    width: 360px;
+    margin-right: 40px;
+    margin-bottom: 33px;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid green;
+}
+
+.catalog-item:hover {
+    border: 1px solid rgba(77, 77, 77, 0.1);
+    box-shadow: 6px 6px 15px rgba(0, 1, 1, 0.25);
+}
+
+.catalog-item:nth-child(even) {
+    margin-right: 0;
 }
 
 .item-description {
@@ -415,8 +740,9 @@ a {
 }
 
 .item-header a {
-    color: #000000;
     text-transform: uppercase;
+
+    color: #000000;
     outline-style: none;
 }
 
@@ -430,17 +756,18 @@ a {
 }
 
 .item-description p {
-    line-height: 18px;
-    color: #666666
-}
+    color: #666666;
 
-.catalog-item:hover {
-    border: 1px solid rgba(77, 77, 77, 0.1);
-    box-shadow: 6px 6px 15px rgba(0, 1, 1, 0.25)
+    line-height: 18px;
 }
 
 /* pagination block */
 
 .pagination-list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
 }
