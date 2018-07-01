@@ -14,6 +14,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .visually-hidden {
     position: absolute;
 
@@ -25,14 +30,25 @@ a {
     margin: -1px;
     padding: 0;
 
+    white-space: nowrap;
+
     border: none;
+
+    clip-path: inset(100%);
+}
+
+.container {
+    width: 1160px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 /* header block*/
 
 .main-header {
-    min-height: 115px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
     background-color: #eeeeee;
 }
@@ -41,6 +57,7 @@ a {
     width: 160px;
     height: 65px;
     margin-top: 50px;
+    margin-right: 202px;
 
     outline-style: none;
 }
@@ -57,19 +74,10 @@ a {
 .main-navigation {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
-
-    width: 1160px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
 
     text-transform: uppercase;
 
     color: #000000;
-    /*Временно для показа сетки*/
-    outline: 1px solid skyblue;
 
     font-size: 16px;
     font-weight: 500;
@@ -79,6 +87,7 @@ a {
 .site-navigation,
 .user-navigation {
     display: flex;
+    flex-wrap: wrap;
 
     margin: 0;
     padding: 0;
@@ -87,9 +96,7 @@ a {
 }
 
 .site-navigation {
-    justify-content: space-between;
-
-    width: 438px;
+    width: 540px;
     /*Временно для показа сетки*/
 
     outline: 1px solid green;
@@ -99,6 +106,7 @@ a {
     justify-content: flex-end;
 
     width: 160px;
+    margin-left: auto;
     /*Временно для показа сетки*/
 
     outline: 1px solid green;
@@ -108,8 +116,17 @@ a {
 .user-navigation a {
     position: relative;
 
+    display: block;
+
+    margin-bottom: 9px;
+
     color: #000000;
     outline-style: none;
+}
+
+.site-navigation li:not(:last-child),
+.site-navigation li:not(:last-child) {
+    margin-right: 46px;
 }
 
 .site-navigation a:hover,
@@ -127,7 +144,7 @@ a {
 .site-navigation .current::after,
 .user-navigation .current::after {
     position: absolute;
-    bottom: -9px;
+    bottom: -5px;
     left: 0;
 
     width: 100%;
@@ -137,18 +154,40 @@ a {
     border-bottom: 2px solid #fb565a;
 }
 
+.cart-link > a {
+    position: relative;
+
+    padding-left: 40px;
+}
+
+.cart-link a::before {
+    position: absolute;
+    top: 6px;
+    left: 0;
+
+    width: 15px;
+    height: 15px;
+
+    content: "";
+
+    background-image: url("../img/icons/icon-cart.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
 /* slider block*/
 
-.features {
-    margin-bottom: 80px;
-
+.features-wrapper {
     background-color: #eeeeee;
 }
 
+.features {
+    margin-bottom: 80px;
+}
+
 .features-list {
-    width: 1160px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0;
+    padding: 0;
 
     list-style: none;
     /*Временно для показа сетки*/
@@ -170,17 +209,10 @@ a {
 /* products block */
 
 .products {
-    width: 1160px;
-    margin-right: auto;
     margin-bottom: 40px;
-    margin-left: auto;
-    padding-right: 20px;
     padding-bottom: 80px;
-    padding-left: 20px;
 
     border-bottom: 2px solid #818181;
-    /*Временно для показа сетки*/
-    outline: 1px solid goldenrod;
 }
 
 .products-list-large {
@@ -190,6 +222,9 @@ a {
     padding: 0;
 
     list-style: none;
+    /*Временно для показа сетки*/
+
+    outline: 1px solid goldenrod;
 }
 
 .products-list-large h3 {
@@ -219,13 +254,9 @@ a {
     display: flex;
     justify-content: space-between;
 
-    width: 1160px;
-    margin-right: auto;
     margin-bottom: 45px;
     margin-left: auto;
-    padding-right: 20px;
     padding-bottom: 78px;
-    padding-left: 20px;
 
     border-bottom: 2px solid #818181;
     /*Временно для показа сетки*/
@@ -368,15 +399,10 @@ a {
 
 .partners {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
-    width: 1160px;
-    margin-right: auto;
     margin-bottom: 80px;
-    margin-left: auto;
-    padding-right: 20px;
     padding-bottom: 45px;
-    padding-left: 20px;
 
     text-align: center;
 
@@ -446,12 +472,6 @@ a {
 
 .footer-social {
     display: flex;
-
-    width: 1160px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
     /*Временно для показа сетки*/
 
     outline: 1px solid forestgreen;
@@ -552,9 +572,10 @@ a {
 }
 
 .page-title {
-    width: 1160px;
-    margin: 0 auto 55px auto;
-    padding: 70px 20px 100px 20px;
+    margin-top: 0;
+    margin-bottom: 55px;
+    padding-top: 70px;
+    padding-bottom: 100px;
 
     text-align: center;
 
@@ -569,12 +590,7 @@ a {
     display: flex;
     justify-content: space-between;
 
-    width: 1160px;
-    margin-right: auto;
     margin-bottom: 60px;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
     /*Временно для показа сетки*/
 
     outline: 1px solid pink;
