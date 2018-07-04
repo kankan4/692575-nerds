@@ -535,15 +535,28 @@ img {
 /* partners block */
 
 .partners {
+    margin-bottom: 80px;
+    padding-bottom: 36px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.partners ul {
     display: flex;
     justify-content: space-around;
-
-    margin-bottom: 75px;
-    padding-bottom: 45px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     /* text-align: center; */
 
-    border-bottom: 2px solid #eeeeee;
+}
+
+.partners li {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 290px;
 }
 
 .partners img {
@@ -559,6 +572,47 @@ img {
     opacity: 0.1;
 }
 
+
+/*partners position correctives*/
+
+.partners-item:nth-of-type(1) a {
+    padding: 7px 33px 0 0;
+}
+
+.partners-item:nth-of-type(2) a {
+    padding: 2px 8px 0 0px;
+}
+
+.partners-item:nth-of-type(3) a {
+    padding-left: 7px;
+}
+
+.partners-item:nth-of-type(4) a {
+    padding: 3px 0 0 27px;
+}
+
+.partners-item:not(:last-of-type) a::after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    content: "";
+    /* transform: translateY(-50%); */
+    border-left: 2px solid #eeeeee;
+    height: 52px;
+}
+
+.partners-item:nth-of-type(1) a::after {
+    transform: translate(-11px, -50%);
+}
+
+.partners-item:nth-of-type(2) a::after {
+    transform: translate(-1px, -50%);
+}
+
+.partners-item:nth-of-type(3) a::after {
+    transform: translate(9px, -50%);
+}
+
 /* footer block */
 
 .main-footer {
@@ -567,35 +621,55 @@ img {
 
 .footer-location {
     position: relative;
-
-    width: 1440px;
-    margin-right: auto;
-    margin-bottom: 70px;
-    margin-left: auto;
+    height: 416px;
+    margin-bottom: 68px;
+    overflow: hidden;
 }
 
 .footer-location img {
-    /* position: absolute; */
+    position: absolute;
+    z-index: 10;
     background-color: #e9e5dc;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1440px;
+    height: 416px;
+    max-width: none;
+    z-index: 10;
+}
+
+.footer-location::after {
+    position: absolute;
+    content: "";
+    top: 90px;
+    left: 57%;
+    background-image: url("../img/location-map-marker.png");
+    background-repeat: no-repeat;
+    width: 231px;
+    height: 190px;
+    z-index: 20;
+}
+
+.footer-contacts-wrapper {
+    margin-top: 54px;
 }
 
 .footer-contacts {
-    position: absolute;
-    top: 54px;
-    left: 140px;
-
+    position: relative;
+    z-index: 20;
     box-sizing: border-box;
     width: 320px;
-    height: 310px;
-    padding: 47px 50px;
+    padding: 49px 50px 46px 50px;
 
     background-color: #ffffff;
 }
 
 .footer-contacts b {
     text-transform: uppercase;
-
+    margin-bottom: 24px;
     color: #000000;
+    display: block;
 
     font-size: 18px;
     font-weight: 700;
@@ -604,8 +678,14 @@ img {
 
 .footer-contacts p {
     color: #666666;
-
+    margin: 0;
+    padding: 0;
     line-height: 18px;
+    margin-bottom: 37px;
+}
+
+.footer-contacts .button{
+    width: 220px;
 }
 
 .footer-social {
@@ -618,7 +698,7 @@ img {
     /* justify-content: space-between; */
     flex-wrap: wrap;
     align-items: center;
-    width: 280px;
+    width: 279px;
     margin: 0;
     margin-right: 120px;
     padding: 0;
@@ -629,29 +709,34 @@ img {
 }
 
 .social-button {
+    position: relative;
+    margin-right: 11px;
+    margin-bottom: 11px;
+}
+
+.social-button a {
     background-color: #e1e1e1;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    position: relative;
-    margin-right: 11px;
+    display: block;
 }
 
-.social-button:focus,
-.social-button:hover {
+.social-button a:focus,
+.social-button a:hover {
     background-color: #e74246;
 }
 
-.social-button:active {
+.social-button a:active {
     background-color: #d7373b;
     box-shadow: 0 3px rgba(0, 1, 1, 0.1) inset;
 }
 
-.social-button:active::before {
+.social-button a:active::before {
     opacity: 0.3;
 }
 
-.social-button::before {
+.social-button a::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -661,24 +746,23 @@ img {
     transform: translate(-50%, -50%);
 }
 
-.social-button.vk::before {
+.social-button .vk::before {
     background-image: url("../img/social-vk-icon.svg");
     width: 26px;
     height: 15px;
 }
 
-.social-button.fb::before {
+.social-button .fb::before {
     background-image: url("../img/social-fb-icon.svg");
     width: 12px;
     height: 22px;
 }
 
-.social-button.insta::before {
+.social-button .insta::before {
     background-image: url("../img/social-insta-icon.svg");
     width: 21px;
     height: 21px;
 }
-
 
 .social-button a {
     color: #000000;
@@ -689,6 +773,7 @@ img {
 
     margin: 0;
     padding: 0;
+    padding-bottom: 9px;
 }
 
 .footer-social b {
