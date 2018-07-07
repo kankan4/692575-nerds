@@ -195,10 +195,10 @@ img {
 .features-item {
     display: none;
 
-    padding: 78px 0 80px 0;
+    padding: 77px 0 81px 0;
 }
 
-.features-item:nth-child(1) {
+.features-item.active {
     display: block;
 }
 
@@ -834,53 +834,6 @@ img {
     line-height: 22px;
 }
 
-/* write us form */
-
-.form-header {
-    color: #000000;
-
-    font-size: 45px;
-    font-weight: 500;
-    line-height: 45px;
-}
-
-.write-us-form label {
-    color: #000000;
-
-    font-weight: 700;
-    line-height: 18px;
-}
-
-.write-us-form input,
-.write-us-form textarea {
-    color: rgba(68, 68, 68, 0.5);
-    border: 2px solid #d7dcde;
-    outline-style: none;
-
-    font: inherit;
-    line-height: 18px;
-}
-
-.write-us-form input:hover,
-.write-us-form textarea:hover {
-    color: rgba(68, 68, 68, 1);
-    border-color: #b4b9bb;
-}
-
-.write-us-form input:focus,
-.write-us-form textarea:focus {
-    color: rgba(68, 68, 68, 1);
-    border-color: #000000;
-}
-
-/* Использовать не получается, т.к. пустое поле при загрузке уже считается невалидным */
-
-/* .write-us-form input:invalid,
-.write-us-form textarea:invalid {
-    color: #e74246;
-    border-color: #e74246;
-} */
-
 /* catalog page */
 
 .page-title-wrapper {
@@ -1348,8 +1301,120 @@ img {
     width: 260px;
 }
 
-/* write us window */
+/* write us form */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px 0 rgba(0, 1 ,1 , 0.75);
+}
 
 .modal-write-us {
     display: none;
+    width: 760px;
+    padding: 70px 100px 84px 100px;
+}
+
+.form-header {
+    color: #000000;
+
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 45px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.user-info-row,
+.feedback-text-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info-row {
+    margin-bottom: 34px;
+}
+
+.feedback-text-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
+}
+
+.write-us-form label {
+    color: #000000;
+    display: block;
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.write-us-form input,
+.write-us-form textarea {
+    color: rgba(68, 68, 68, 0.5);
+    border: 2px solid #d7dcde;
+    outline-style: none;
+    border-radius: 3px;
+    font: inherit;
+    line-height: 18px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.write-us-form input {
+    width: 360px;
+}
+
+.write-us-form textarea {
+    min-height: 118px;
+    resize: vertical;
+}
+
+.write-us-form input:hover,
+.write-us-form textarea:hover {
+    color: rgba(68, 68, 68, 1);
+    border-color: #b4b9bb;
+}
+
+.write-us-form input:focus,
+.write-us-form textarea:focus {
+    color: rgba(68, 68, 68, 1);
+    border-color: #000000;
+}
+
+.write-us-form button {
+    width: 260px;
+}
+
+.modal-close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 78px;
+    right: 90px;
+    background-image: url("../img/icons/icon-close-cross.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    outline-style: none;
+    border: 0;
+    background-color: transparent;
+    opacity: 0.3;
+}
+
+.modal-close:focus,
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-close:active {
+    opacity: 0.1;
+}
+
+.modal-show {
+    display: block;
 }

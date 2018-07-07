@@ -56,7 +56,7 @@
                     </button>
                 </div>
                 <ul class="features-list container">
-                    <li class="features-item">
+                    <li class="features-item active">
                         <h3>Долго, дорого, скурпулезно.</h3>
                         <p>Математически выверенный дизайн
                             <br>для вашего сайта или мобильного приложения.</p>
@@ -221,7 +221,7 @@
         <h2 class="visually-hidden">Форма обратной связи</h2>
         <p class="form-header">Напишите нам</p>
         <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
-            <div class="form-row">
+            <div class="user-info-row">
                 <div class="half-width">
                     <label for="user-name">Ваше имя:</label>
                     <input type="text" name="name" id="user-name" placeholder="Имя Фамилия" required>
@@ -231,14 +231,18 @@
                     <input type="text" name="email" id="user-email" placeholder="email@example.com" required>
                 </div>
             </div>
-            <div class="form-row">
-                <label for="user-text">Текст письма:</label>
-                <textarea name="text" id="user-text" placeholder="В свободной форме" required></textarea>
+            <div class="feedback-text-row">
+                <label for="feedback-text">Текст письма:</label>
+                <textarea name="text" id="feedback-text" placeholder="В свободной форме" required></textarea>
             </div>
             <button class="button button-red" type="submit">Отправить</button>
         </form>
-        <button class="modal-close" type="button">Закрыть</button>
+        <button class="modal-close" type="button">
+            <span class="visually-hidden">Закрыть</span>
+        </button>
     </section>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
