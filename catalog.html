@@ -23,7 +23,7 @@
                     <a href="#">Клиенты</a>
                 </li>
                 <li>
-                    <a class="current">Магазин</a>
+                    <a class="active">Магазин</a>
                 </li>
                 <li>
                     <a href="#">Контакты</a>
@@ -47,14 +47,21 @@
             <section class="filters">
                 <h2 class="visually-hidden">Фильтр товаров</h2>
                 <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
-                    <fieldset>
+                    <fieldset class="price-filter">
                         <legend>Стоимость:</legend>
-                        <div class="price-range-bar">
-                            <div class="price-range-scale"></div>
-                            <button class="price-range-min" type="button">Указать минимум</button>
-                            <button class="price-range-max" type="button">Указать максимум</button>
+                        <div class="price-range-container">
+                            <div class="price-range-scale">
+                                <div class="price-range-bar">
+                                    <button class="price-range-button range-min" type="button">
+                                        <span class="visually-hidden">Указать минимум</span>
+                                    </button>
+                                    <button class="price-range-button range-max" type="button">
+                                        <span class="visually-hidden">Указать максимум</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="price-range-input">
+                        <div class="price-input">
                             <label>От
                                 <input class="price-input-text" type="text" name="price-min" value="0">
                             </label>
@@ -62,46 +69,44 @@
                                 <input class="price-input-text" type="text" name="price-max" value="15000">
                             </label>
                         </div>
-                        <div class="price-range">
-                        </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="layout-filter">
                         <legend>Сетка:</legend>
                         <ul class="filter-list">
-                            <li class="filter-input-radio">
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-radio" type="radio" id="filter-adaptive" name="layout-type" value="adaptive" checked>
                                 <label for="filter-adaptive">Адаптивная</label>
                             </li>
-                            <li class="filter-input-radio">
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-radio" type="radio" id="filter-fixed" name="layout-type" value="fixed">
                                 <label for="filter-fixed">Фиксированная</label>
                             </li>
-                            <li class="filter-input-radio">
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-radio" type="radio" id="filter-fluid" name="layout-type" value="fluid">
                                 <label for="filter-fluid">Резиновая</label>
                             </li>
                         </ul>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="module-filter">
                         <legend>Особенности:</legend>
                         <ul class="filter-list">
-                            <li>
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-checkbox" type="checkbox" id="filter-slider" name="slider" checked>
                                 <label for="filter-slider">Слайдер</label>
                             </li>
-                            <li>
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-checkbox" type="checkbox" id="filter-features" name="features">
                                 <label for="filter-features">Блок преимуществ</label>
                             </li>
-                            <li>
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-checkbox" type="checkbox" id="filter-news" name="news" checked>
                                 <label for="filter-news">Новости</label>
                             </li>
-                            <li>
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-checkbox" type="checkbox" id="filter-gallery" name="gallery">
                                 <label for="filter-gallery">Галерея</label>
                             </li>
-                            <li>
+                            <li class="filter-item">
                                 <input class="visually-hidden filter-input-checkbox" type="checkbox" id="filter-cart" name="cart">
                                 <label for="filter-cart">Корзина</label>
                             </li>
@@ -117,24 +122,24 @@
                     <p class="sort-header">Сортировать:</p>
                     <div class="sort-types-wrapper">
                         <ul class="sort-list">
-                            <li class="sort-type sort-active">
-                                <a href="#">По цене</a>
+                            <li>
+                                <a class="sort-type active">По цене</a>
                             </li>
-                            <li class="sort-type">
-                                <a href="#">По типу</a>
+                            <li>
+                                <a class="sort-type" href="#">По типу</a>
                             </li>
-                            <li class="sort-type">
-                                <a href="#">По названию</a>
+                            <li>
+                                <a class="sort-type" href="#">По названию</a>
                             </li>
                         </ul>
                         <ul class="sort-direction">
-                            <li class="sort-descending sort-active">
-                                <a href="#">
+                            <li>
+                                <a class="sort-icon sort-descending active">
                                     <span class="visually-hidden">По убыванию</span>
                                 </a>
                             </li>
-                            <li class="sort-ascending">
-                                <a href="#">
+                            <li>
+                                <a class="sort-icon sort-ascending" href="#">
                                     <span class="visually-hidden">По возрастанию</span>
                                 </a>
                             </li>
@@ -151,9 +156,11 @@
                                 <h3 class="item-header">
                                     <a href="#">Sedona</a>
                                 </h3>
-                                <p>Информационный сайт для туристов</p>
+                                <p>Информационный сайт
+                                    <br>для туристов</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                         <li class="catalog-item">
@@ -164,7 +171,8 @@
                                 </h3>
                                 <p>Продуктовый лендинг приложения для iOS и Android</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                         <li class="catalog-item">
@@ -173,9 +181,10 @@
                                 <h3 class="item-header">
                                     <a href="#">Barbershop</a>
                                 </h3>
-                                <p>Сайт салона красоты. Для мужчин, да.</p>
+                                <p>Сайт салона красоты.<br>Для мужчин, да.</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                         <li class="catalog-item">
@@ -184,9 +193,10 @@
                                 <h3 class="item-header">
                                     <a href="#">Mishka</a>
                                 </h3>
-                                <p>Интернет-магазин вязаных игрушек</p>
+                                <p>Интернет-магазин<br>вязаных игрушек</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                         <li class="catalog-item">
@@ -197,7 +207,8 @@
                                 </h3>
                                 <p>Лендинг курсов повышения квалификации</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                         <li class="catalog-item">
@@ -208,13 +219,14 @@
                                 </h3>
                                 <p>Промо-сайт производителя крафтового кваса</p>
                                 <a class="button button-red" href="#">
-                                    <span class="visually-hidden">Купить за </span>9900 руб.</a>
+                                    <span class="visually-hidden">Купить за </span>9900 руб.
+                                </a>
                             </div>
                         </li>
                     </ul>
                     <ul class="pagination-list">
                         <li class="pagination-item">
-                            <a class="button button-gray current">1</a>
+                            <a class="button button-gray active">1</a>
                         </li>
                         <li class="pagination-item">
                             <a class="button button-gray" href="#">2</a>
@@ -234,7 +246,7 @@
     <footer class="main-footer">
         <section class="footer-location">
             <h2 class="visually-hidden">Расположение</h2>
-            <img src="img/location-map.png" width="1440" height="416" alt="Расположение студии на карте ">
+            <img src="img/map-with-marker.jpg" width="1440" height="416" alt="Расположение студии на карте ">
             <div class="footer-contacts-wrapper container">
                 <section class="footer-contacts">
                     <h3 class="visually-hidden">Контакты</h3>

@@ -139,8 +139,8 @@ img {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.site-navigation .current::after,
-.user-navigation .current::after {
+.site-navigation .active::after,
+.user-navigation .active::after {
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -264,7 +264,7 @@ img {
 
     border: 0;
     border-radius: 50%;
-    outline: 0;
+    outline-style: none;
     background-color: rgba(0, 0, 0, 0);
 
     font-size: 0;
@@ -471,8 +471,10 @@ img {
 .button {
     display: block;
 
+    box-sizing: border-box;
     padding: 16px 0;
 
+    cursor: pointer;
     text-align: center;
     text-transform: uppercase;
 
@@ -547,13 +549,18 @@ img {
     box-shadow: 0 3px rgba(0, 1, 1, 0.1) inset;
 }
 
-.button-gray.current,
-.button-gray.current:hover,
-.button-gray.current:focus,
-.button-gray.current:active {
+.button-gray.active,
+.button-gray.active:hover,
+.button-gray.active:focus,
+.button-gray.active:active {
+    padding: 13px 0;
+
+    cursor: default;
+
     color: #000000;
     border: 3px solid #dbdbdb;
     background-color: #ffffff;
+    box-shadow: none;
 }
 
 /* partners block */
@@ -625,21 +632,20 @@ img {
     height: 52px;
 
     content: "";
-    /* transform: translateY(-50%); */
 
     border-left: 2px solid #eeeeee;
 }
 
 .partners-item:nth-of-type(1) a::after {
-    transform: translate(-11px, -50%);
+    transform: translate(-11px, -60%);
 }
 
 .partners-item:nth-of-type(2) a::after {
-    transform: translate(-1px, -50%);
+    transform: translate(-1px, -60%);
 }
 
 .partners-item:nth-of-type(3) a::after {
-    transform: translate(9px, -50%);
+    transform: translate(9px, -60%);
 }
 
 /* footer block */
@@ -739,7 +745,6 @@ img {
 .social-list {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
 
     width: 279px;
@@ -917,9 +922,6 @@ img {
     justify-content: space-between;
 
     margin-bottom: 60px;
-    /*Временно для показа сетки*/
-
-    outline: 1px solid pink;
 }
 
 .main-column-wrapper {
@@ -936,9 +938,6 @@ img {
 
 .filters {
     width: 260px;
-    /*Временно для показа сетки*/
-
-    outline: 1px solid skyblue;
 }
 
 .filter-form legend {
@@ -952,33 +951,177 @@ img {
 }
 
 .filter-form fieldset {
-    border: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+
+    border: none;
 }
 
-.price-range-input label {
+/* price filter */
+
+.filter-form .price-filter {
+    margin-bottom: 55px;
+}
+
+.price-range-container {
+    height: 2px;
+    margin: 48px 0 13px 0;
+    padding: 39px 21px;
+
+    border-radius: 2px;
+    background-color: #eeeeee;
+}
+
+.price-range-scale {
+    height: inherit;
+
+    background-color: #d7dcde;
+}
+
+.price-range-bar {
+    position: relative;
+
+    width: 68%;
+    height: inherit;
+
+    background-color: #00ca74;
+}
+
+.price-range-button {
+    position: absolute;
+    top: 50%;
+
+    box-sizing: content-box;
+    width: 4px;
+    height: 4px;
+    padding: 0;
+
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+
+    border: 8px solid #ffffff;
+    border-radius: 50%;
+    outline: 0;
+    background-color: #ababab;
+    box-shadow: 0 2px 0 0 #cccdcd;
+}
+
+.price-range-button.range-min {
+    left: 0;
+}
+
+.price-range-button.range-max {
+    left: 100%;
+}
+
+.price-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-input label {
     text-transform: uppercase;
 
     line-height: 22px;
 }
 
-.price-range-input input {
+.price-input input {
+    width: 80px;
+    height: 38px;
+    margin-left: 8px;
+    padding: 0;
+
     text-align: center;
 
     border: none;
+    border-radius: 2px;
     outline-style: none;
     background-color: #eeeeee;
 }
 
+/* layout and module filters */
+
+.filter-form .layout-filter {
+    margin-bottom: 25px;
+}
+
+.filter-form .module-filter {
+    margin-bottom: 20px;
+}
+
+.layout-filter legend,
+.module-filter legend {
+    margin-bottom: 16px;
+}
+
 .filter-list {
+    margin: 0;
+    padding: 0;
+
     list-style: none;
 
     line-height: 20px;
 }
 
-.filter-input-radio:checked+label,
-.filter-input-checkbox:checked+label {
+.filter-item {
+    margin-bottom: 20px;
+}
+
+.filter-item label {
+    position: relative;
+
+    padding-left: 37px;
+}
+
+.filter-input-radio+label::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 26px;
+    height: 26px;
+
+    content: "";
+    transform: translateY(-50%);
+
+    opacity: 0.4;
+    background-image: url("../img/icons/icon-radio-off.svg");
+    background-repeat: no-repeat;
+}
+
+.filter-input-radio:checked+label::before {
+    background-image: url("../img/icons/icon-radio-on.svg");
+}
+
+.filter-input-checkbox+label::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 27px;
+    height: 23px;
+
+    content: "";
+    transform: translateY(-50%);
+
+    opacity: 0.4;
+    background-image: url("../img/icons/icon-checkbox-off.svg");
+    background-repeat: no-repeat;
+}
+
+.filter-input-checkbox:checked+label::before {
+    background-image: url("../img/icons/icon-checkbox-on.svg");
+}
+
+.filter-input-radio:hover+label::before,
+.filter-input-checkbox:hover+label::before {
+    opacity: 1;
+}
+
+.filter-input-radio:focus+label,
+.filter-input-checkbox:focus+label,
+.filter-input-radio:hover+label,
+.filter-input-checkbox:hover+label {
     color: #000000;
 }
 
@@ -987,25 +1130,34 @@ img {
     color: rgba(40, 49, 54, 0.3);
 }
 
+.filter-input-radio:disabled+label::before,
+.filter-input-checkbox:disabled+label::before {
+    opacity: 0.1;
+}
+
+.filter-form .button {
+    width: 100%;
+}
+
 /* sorting block */
 
 .sorting {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
-    /*Временно для показа сетки*/
 
-    outline: 1px solid skyblue;
+    margin-bottom: 54px;
 }
 
 .sort-header {
-    margin-top: 3px;
     width: 360px;
+    margin: 0;
+    margin-top: 3px;
+    padding: 0;
+
     text-transform: uppercase;
 
     color: #000000;
-    /*Временно для показа сетки*/
-    outline: 1px solid green;
 
     font-size: 18px;
     font-weight: 700;
@@ -1025,15 +1177,17 @@ img {
 
     list-style: none;
 
-    font-size: 14px;
-    line-height: 18px;
     text-transform: uppercase;
 
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .sort-list {
     flex-wrap: wrap;
+
     width: 300px;
+    padding-top: 5px;
 }
 
 .sort-list li {
@@ -1042,21 +1196,49 @@ img {
 
 .sort-direction {
     width: 60px;
+    padding-top: 8px;
 }
 
-.sorting a {
+.sort-direction li {
+    padding-left: 19px;
+}
+
+.sort-type {
     color: rgba(0, 0, 0, 0.3);
     outline-style: none;
 }
 
-.sorting a:hover,
-.sorting a:focus {
+.sort-type:hover,
+.sort-type:focus {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.sorting a:active,
-.sort-active a {
+.sort-type:active,
+.sort-type.active {
     color: rgba(0, 0, 0, 1);
+}
+
+.sort-icon {
+    display: block;
+
+    border-right: 5.5px solid transparent;
+    border-bottom: 10px solid rgba(35, 31, 32, 0.2);
+    border-left: 5.5px solid transparent;
+}
+
+.sort-icon:hover,
+.sort-icon:focus {
+    border-bottom-color: #a6a6a6;
+}
+
+.sort-icon:active {
+    border-bottom-color: rgba(35, 31, 32, 1);
+}
+
+.sort-icon.active {
+    transform: rotate(180deg);
+
+    border-bottom-color: rgba(35, 31, 32, 1);
 }
 
 /* catalog */
@@ -1096,6 +1278,10 @@ img {
 }
 
 .item-description {
+    padding: 11px 60px;
+
+    text-align: center;
+
     background-color: #eeeeee;
 }
 
@@ -1121,6 +1307,12 @@ img {
     line-height: 18px;
 }
 
+.catalog-item .button {
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* pagination block */
 
 .pagination-list {
@@ -1131,6 +1323,20 @@ img {
 
     list-style: none;
 }
+
+.pagination-item {
+    margin-right: 12px;
+}
+
+.pagination-item .button {
+    width: 50px;
+}
+
+.pagination-item:last-child .button {
+    width: 260px;
+}
+
+/* write us window */
 
 .modal-write-us {
     display: none;
