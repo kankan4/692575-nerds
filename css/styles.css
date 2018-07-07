@@ -55,7 +55,6 @@ img {
     width: 160px;
     height: 65px;
     margin-top: 50px;
-    margin-right: 202px;
 
     outline-style: none;
 }
@@ -901,8 +900,8 @@ img {
 .page-title {
     margin-top: 0;
     margin-bottom: 55px;
-    padding-top: 70px;
-    padding-bottom: 100px;
+    padding-top: 77px;
+    padding-bottom: 108px;
 
     text-align: center;
 
@@ -954,6 +953,8 @@ img {
 
 .filter-form fieldset {
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .price-range-input label {
@@ -990,7 +991,7 @@ img {
 
 .sorting {
     display: flex;
-
+    justify-content: space-between;
     margin-bottom: 50px;
     /*Временно для показа сетки*/
 
@@ -998,8 +999,8 @@ img {
 }
 
 .sort-header {
-    margin-right: 265px;
-
+    margin-top: 3px;
+    width: 360px;
     text-transform: uppercase;
 
     color: #000000;
@@ -1011,6 +1012,10 @@ img {
     line-height: 18px;
 }
 
+.sort-types-wrapper {
+    display: flex;
+}
+
 .sort-list,
 .sort-direction {
     display: flex;
@@ -1019,12 +1024,24 @@ img {
     padding: 0;
 
     list-style: none;
-    /*Временно для показа сетки*/
-
-    outline: 1px solid green;
 
     font-size: 14px;
     line-height: 18px;
+    text-transform: uppercase;
+
+}
+
+.sort-list {
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.sort-list li {
+    padding-right: 25px;
+}
+
+.sort-direction {
+    width: 60px;
 }
 
 .sorting a {
