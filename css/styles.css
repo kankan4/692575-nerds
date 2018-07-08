@@ -35,7 +35,8 @@ img {
 
     border: none;
 
-    clip-path: inset(100%);
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
 }
 
 .container {
@@ -249,7 +250,8 @@ img {
     bottom: 90px;
     left: 50%;
 
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 .slider-button {
@@ -281,7 +283,8 @@ img {
     height: 18px;
 
     content: "";
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 
     border-radius: 50%;
     background: #ffffff;
@@ -297,7 +300,8 @@ img {
     height: 4px;
 
     content: "";
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 
     border: 2px solid #c1c1c1;
     border-radius: 50%;
@@ -642,15 +646,18 @@ img {
 }
 
 .partners-item:nth-of-type(1) a::after {
-    transform: translate(-11px, -60%);
+    -webkit-transform: translate(-11px, -60%);
+            transform: translate(-11px, -60%);
 }
 
 .partners-item:nth-of-type(2) a::after {
-    transform: translate(-1px, -60%);
+    -webkit-transform: translate(-1px, -60%);
+            transform: translate(-1px, -60%);
 }
 
 .partners-item:nth-of-type(3) a::after {
-    transform: translate(9px, -60%);
+    -webkit-transform: translate(9px, -60%);
+            transform: translate(9px, -60%);
 }
 
 /* footer block */
@@ -679,7 +686,8 @@ img {
     max-width: none;
     height: 416px;
 
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 
     background-color: #e9e5dc;
 }
@@ -785,7 +793,8 @@ img {
     left: 50%;
 
     content: "";
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 
     background-repeat: no-repeat;
 }
@@ -938,7 +947,8 @@ img {
     padding: 0;
 
     cursor: pointer;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 
     border: 8px solid #ffffff;
     border-radius: 50%;
@@ -1027,7 +1037,8 @@ img {
     height: 26px;
 
     content: "";
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 
     opacity: 0.4;
     background-image: url("../img/icons/icon-radio-off.svg");
@@ -1047,7 +1058,8 @@ img {
     height: 23px;
 
     content: "";
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 
     opacity: 0.4;
     background-image: url("../img/icons/icon-checkbox-off.svg");
@@ -1181,7 +1193,8 @@ img {
 }
 
 .sort-icon.active {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 
     border-bottom-color: rgba(35, 31, 32, 1);
 }
@@ -1259,7 +1272,7 @@ img {
 
     text-align: center;
 
-    opacity: 1;
+    opacity: 0;
     background-color: #eeeeee;
 }
 
@@ -1337,7 +1350,8 @@ img {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 
     background-color: #ffffff;
     box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
