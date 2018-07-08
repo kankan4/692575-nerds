@@ -25,23 +25,23 @@ window.addEventListener("keydown", function (evt) {
     }
 });
 
-slideButtons.forEach(button => {
+slideButtons.forEach(function (button) {
     button.addEventListener("click", changeSlide);
 });
 
-function changeSlide (evt) {
+function changeSlide(evt) {
     evt.preventDefault();
     var currentElement = evt.target;
     var slideIndex = slideButtons.indexOf(currentElement);
     if (!currentElement.classList.contains("active")) {
-        slideButtons.forEach(button => {
+        slideButtons.forEach(function (button) {
             if (button.classList.contains("active")) {
                 button.classList.remove("active");
             }
         })
         currentElement.classList.add("active");
 
-        slides.forEach(slide => {
+        slides.forEach(function (slide) {
             if (slide.classList.contains("active")) {
                 slide.classList.remove("active");
             }

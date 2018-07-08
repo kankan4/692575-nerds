@@ -1,4 +1,5 @@
 body {
+    min-width: 1200px;
     margin: 0;
     padding: 0;
 
@@ -339,6 +340,7 @@ img {
 
 .products-list-large p {
     margin-bottom: 33px;
+    padding-right: 40px;
 }
 
 .products-item-large:not(:last-child) {
@@ -351,8 +353,9 @@ img {
 
 /* about block */
 
-.about {
+.about-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     margin-bottom: 45px;
@@ -388,6 +391,8 @@ img {
     padding-bottom: 23px;
 
     text-transform: uppercase;
+
+    color: #000000;
 
     font-weight: 700;
 }
@@ -709,17 +714,18 @@ img {
 }
 
 .footer-contacts p {
-    margin: 0;
-    margin-bottom: 37px;
-    padding: 0;
-
     color: #666666;
 
     line-height: 18px;
 }
 
+.contact-phone {
+    color: inherit;
+}
+
 .footer-contacts .button {
     width: 220px;
+    margin-top: 39px;
 }
 
 .footer-social {
@@ -941,8 +947,10 @@ img {
     box-shadow: 0 2px 0 0 #cccdcd;
 }
 
+/* for pixel perfect, logical correctly left: 0*/
+
 .price-range-button.range-min {
-    left: 0;
+    left: 6px;
 }
 
 .price-range-button.range-max {
@@ -972,6 +980,8 @@ img {
     border-radius: 2px;
     outline-style: none;
     background-color: #eeeeee;
+
+    line-height: 22px;
 }
 
 /* layout and module filters */
@@ -1192,28 +1202,34 @@ img {
 
 .catalog-item {
     position: relative;
+
     box-sizing: border-box;
-    border-top: 40px solid rgba(77, 77, 77, 0.12);
     width: 360px;
     margin-right: 40px;
     margin-bottom: 33px;
+
+    border-top: 40px solid rgba(77, 77, 77, 0.12);
     border-radius: 3px;
 }
 
 .catalog-item img {
+    display: block;
+
     width: 360px;
     height: 576px;
-    display: block;
 }
 
 .catalog-item::before {
-    content: "";
     position: absolute;
-    border-radius: 50%;
-    left: 16px;
     top: -27px;
+    left: 16px;
+
     width: 14px;
     height: 14px;
+
+    content: "";
+
+    border-radius: 50%;
     background-color: #ffffff;
     box-shadow: 23px 0 #ffffff, 46px 0 #ffffff;
 }
@@ -1233,19 +1249,22 @@ img {
 
 .item-description {
     position: absolute;
-    left: 0;
     bottom: 0;
-    padding: 11px 60px;
-    width: 100%;
-    text-align: center;
+    left: 0;
+
     box-sizing: border-box;
-    opacity: 0;
+    width: 100%;
     min-height: 231px;
+    padding: 11px 65px;
+
+    text-align: center;
+
+    opacity: 1;
     background-color: #eeeeee;
 }
 
 .item-header {
-    margin: 20px 0 17px 0;
+    margin: 16px 0 15px 0;
     padding: 0;
 }
 
@@ -1254,6 +1273,10 @@ img {
 
     color: #000000;
     outline-style: none;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
 }
 
 .item-header a:hover,
@@ -1266,10 +1289,15 @@ img {
 }
 
 .item-description p {
-    color: #666666;
-    line-height: 18px;
-    margin-bottom: 30px;
     display: block;
+    overflow: hidden;
+
+    max-height: 412px;
+    margin-bottom: 30px;
+
+    color: #666666;
+
+    line-height: 18px;
 }
 
 .catalog-item .button {
@@ -1305,28 +1333,32 @@ img {
 
 .modal {
     position: fixed;
+    z-index: 100;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
-    z-index: 100;
+
     background-color: #ffffff;
-    box-shadow: 0 20px 40px 0 rgba(0, 1 ,1 , 0.75);
+    box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
 }
 
 .modal-write-us {
     display: none;
+
     width: 760px;
     padding: 70px 100px 84px 100px;
 }
 
 .form-header {
+    margin: 0;
+    margin-bottom: 40px;
+
     color: #000000;
 
     font-size: 45px;
     font-weight: 500;
     line-height: 45px;
-    margin: 0;
-    margin-bottom: 40px;
 }
 
 .user-info-row,
@@ -1342,13 +1374,16 @@ img {
 .feedback-text-row {
     display: flex;
     flex-direction: column;
+
     margin-bottom: 44px;
 }
 
 .write-us-form label {
-    color: #000000;
     display: block;
+
     margin-bottom: 10px;
+
+    color: #000000;
 
     font-weight: 700;
     line-height: 18px;
@@ -1356,14 +1391,16 @@ img {
 
 .write-us-form input,
 .write-us-form textarea {
+    box-sizing: border-box;
+    padding: 14px;
+
     color: rgba(68, 68, 68, 0.5);
     border: 2px solid #d7dcde;
-    outline-style: none;
     border-radius: 3px;
+    outline-style: none;
+
     font: inherit;
     line-height: 18px;
-    padding: 14px;
-    box-sizing: border-box;
 }
 
 .write-us-form input {
@@ -1372,6 +1409,7 @@ img {
 
 .write-us-form textarea {
     min-height: 118px;
+
     resize: vertical;
 }
 
@@ -1393,17 +1431,20 @@ img {
 
 .modal-close {
     position: absolute;
-    width: 25px;
-    height: 25px;
     top: 78px;
     right: 90px;
+
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+
+    opacity: 0.3;
+    border: 0;
+    outline-style: none;
+    background-color: transparent;
     background-image: url("../img/icons/icon-close-cross.svg");
     background-repeat: no-repeat;
-    cursor: pointer;
-    outline-style: none;
-    border: 0;
-    background-color: transparent;
-    opacity: 0.3;
 }
 
 .modal-close:focus,
